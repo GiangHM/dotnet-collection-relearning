@@ -8,20 +8,20 @@ namespace dictionary_relearning
     {
         static void Main(string[] args)
         {
-            WorkWithDictionary_1();
+            //WorkWithDictionary();
 
-            WorkWithSortedDictionary();
+            //WorkWithSortedDictionary();
 
-            WorkWithReadOnlyDictionary();
+            //WorkWithReadOnlyDictionary();
 
-            WorkWithImmutableDictionary();
+            //WorkWithImmutableDictionary();
 
             WorkWithFrozenDictionary();
 
             Console.ReadLine();
         }
 
-        private static void WorkWithDictionary_1()
+        private static void WorkWithDictionary()
         {
             // Create a new Dictionary of strings, with string keys
             // and a case-insensitive comparer for the current culture.
@@ -101,11 +101,11 @@ namespace dictionary_relearning
         private static void WorkWithFrozenDictionary()
         {
             var dict = CreateDictionary();
-            var myImmutableDictionary = dict.ToFrozenDictionary();
+            var myFrozenDictionary = dict.ToFrozenDictionary();
 
             for (int i = 0; i < 1000000; i++)
             {
-                myImmutableDictionary.TryGetValue(i.ToString(), out var value);
+                myFrozenDictionary.TryGetValue(i.ToString(), out var value);
                 Console.WriteLine(value);
             }
         }
